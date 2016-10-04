@@ -1,0 +1,55 @@
+
+#js_webinar_entry
+{
+    display: block;
+}
+.webinar_last_post
+{
+    position:absolute;
+    top:1px;
+    right:0px;
+    width: 35%;
+    background:#f7f7f7;
+    border:1px #dfdfdf solid;
+    padding:5px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    overflow:hidden;
+    margin-right: 4px;
+}
+.webinar_last_post .extra_info{
+    padding: 1px 0px 0px 5px;
+}
+.row_title_image{
+    position: inherit !important;
+    width: 80px !important;
+    float: left;
+}
+.webinar_content{
+    margin-left: 30px;
+}
+#webinar_text{
+    width:60%;
+    height: 55px;
+    padding-top: 4px;
+}
+#webinar_text .item_content{
+    padding:0px;
+}
+#js_webinar_entry{
+    padding: 4px 0px 18px 0px;
+}
+
+@media only screen and (max-width: 1000px) {
+    #webinar_text{
+        width: 56%;
+        height: 130px;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    #webinar_text{
+        height: 150px;
+    }
+}

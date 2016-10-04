@@ -1,0 +1,11 @@
+.js_webinar_view_unlike, .js_webinar_view_like{
+    background: #0ABF00;
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 105px;
+    height: 23px;
+    padding: 5px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}

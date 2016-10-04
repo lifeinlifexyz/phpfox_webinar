@@ -1,0 +1,271 @@
+<module>
+	<data>
+		<module_id>webinar</module_id>
+		<product_id>Webinar</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>1</is_menu>
+		<menu><![CDATA[a:2:{s:31:"webinar.admin_menu_add_category";a:1:{s:3:"url";a:2:{i:0;s:7:"webinar";i:1;s:3:"add";}}s:36:"webinar.admin_menu_manage_categories";a:1:{s:3:"url";a:1:{i:0;s:7:"webinar";}}}]]></menu>
+		<phrase_var_name>module_webinar</phrase_var_name>
+	</data>
+	<menus>
+		<menu module_id="webinar" parent_var_name="" m_connection="main" var_name="menu_webinar_webinar_fad58de7366495db4650cfefac2fcd61" ordering="152" url_value="webinar" version_id="3.7.0" disallow_access="" module="webinar" />
+		<menu module_id="webinar" parent_var_name="" m_connection="webinar.index" var_name="menu_webinar_create_a_webinar_2ab2693ac3f523b9a3033ea8412a1882" ordering="154" url_value="webinar.add" version_id="3.7.0beta2" disallow_access="" module="webinar" />
+	</menus>
+	<settings>
+		<setting group="" module_id="webinar" is_hidden="0" type="drop" var_name="via_send" phrase_var_name="setting_via_send" ordering="1" version_id="3.7.0"><![CDATA[a:2:{s:7:"default";s:7:"Message";s:6:"values";a:2:{i:0;s:7:"Message";i:1;s:12:"Notification";}}]]></setting>
+		<setting group="" module_id="webinar" is_hidden="0" type="string" var_name="comment_time_format" phrase_var_name="setting_comment_time_format" ordering="1" version_id="4.4.2">M j, g:i a</setting>
+		<setting group="" module_id="webinar" is_hidden="0" type="string" var_name="comment_ajax_time_refresh" phrase_var_name="setting_comment_ajax_time_refresh" ordering="1" version_id="4.4.2">5</setting>
+		<setting group="" module_id="webinar" is_hidden="0" type="integer" var_name="comment_wordwrap" phrase_var_name="setting_comment_wordwrap" ordering="1" version_id="4.4.2">100</setting>
+	</settings>
+	<blocks>
+		<block type_id="0" m_connection="webinar.index" module_id="webinar" component="categories" location="1" is_active="1" ordering="2" disallow_access="" can_move="0">
+			<title>Categories</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="webinar.view" module_id="webinar" component="detail" location="3" is_active="1" ordering="2" disallow_access="" can_move="0">
+			<title>Detail</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="webinar.view" module_id="webinar" component="attendees" location="1" is_active="1" ordering="1" disallow_access="" can_move="0">
+			<title>Attendees</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="webinar.view" module_id="webinar" component="comment.display" location="1" is_active="1" ordering="1" disallow_access="" can_move="0">
+			<title>Comments</title>
+			<source_code />
+			<source_parsed />
+		</block>
+	</blocks>
+	<components>
+		<component module_id="webinar" component="main-menu" m_connection="" module="webinar" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="webinar" component="webinar.index" m_connection="webinar.index" module="webinar" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="webinar" component="add" m_connection="webinar.add" module="webinar" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="webinar" component="webinar.view" m_connection="webinar.view" module="webinar" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="webinar" component="categories" m_connection="" module="webinar" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="webinar" component="detail" m_connection="" module="webinar" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="webinar" component="attendees" m_connection="" module="webinar" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="webinar" component="comment.display" m_connection="" module="webinar" is_controller="0" is_block="1" is_active="1" />
+	</components>
+	<phrases>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="module_webinar" added="1391025403">Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="menu_webinar_webinar_fad58de7366495db4650cfefac2fcd61" added="1391025764">Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="all_webinars" added="1391027162">All Webinars</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="my_webinars" added="1391027237">My Webinars</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_opentok_api_key" added="1391091503"><![CDATA[<title>API key opentok</title><info>API key - This identifies your OpenTok account.</info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="no_webinars_found" added="1391259399">No webinars found</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="no_webinar" added="1391270779">No webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="menu_webinar_create_a_webinar_2ab2693ac3f523b9a3033ea8412a1882" added="1391271636">Create New Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="edit_webinar" added="1391455729">Edit webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="are_you_sure" added="1391456898">Are you sure?</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="webinar_successfully_deleted" added="1391457053">Webinar successfully deleted</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="user_setting_can_create_webinar" added="1391457169">Can create a new webinar?</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="current_time_cannot_be_created_new_webinar" added="1391457307">Current time cannot be created new webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="provide_a_name_for_this_webinar" added="1391457387">Provide a name for this webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="webinar_successfully_updated" added="1391457582">Webinar successfully updated</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="webinar_successfully_added" added="1391457706">Webinar successfully added</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="category" added="1391525876">Category</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="show_this_webinar_in_search_results" added="1391526128">Show this webinar in search results</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="title" added="1391543354">Title</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="description" added="1391543418"><![CDATA[Description & Message to the invitation]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="you_can_upload_a_jpg_gif_or_png_file" added="1391556508">You can upload a jpg, gif or png file</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="click_here_to_delete_this_image_and_upload_a_new_one_in_its_place" added="1391556588"><![CDATA[Click <a href="#" onclick="{javascript}">here</a> to delete this image and upload a new one in its place.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="photo" added="1391556750">Photo</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="closed" added="1391556995">Closed</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="yes" added="1391557026">Yes</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="no" added="1391557038">No</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="who_may_post_comments_on_this_webinar" added="1391557475">Who may post comments on this webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="invite" added="1391558333">Invite</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="subscribe" added="1391558508">Subscribe</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="who_may_see_this_webinar" added="1391611001">Who may see this webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="choose_lecturers" added="1391634246">Choose lecturers</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="create_webinar" added="1391809309">Create Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="update_webinar" added="1391809367">Update Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="by_full_name_on_time" added="1391874531">By {full_name} on {time}</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="user_setting_total_webinar_displays" added="1391882841">Define how many images a user can view at once when browsing the public webinar section?</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="latest" added="1391884832">Latest</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="most_viewed" added="1391884923">Most viewed</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="most_discussed" added="1391884947">Most discussed</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="search_webinars" added="1391885238">Search webinars</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="sorry_the_webinar_you_are_looking_for_no_longer_exists" added="1391959675"><![CDATA[Sorry, the webinar you are looking for no longer exists. Please <a href="{link}">click here</a> to browse different webinars.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_opentok_api_secret" added="1391976061"><![CDATA[<title>API secret opentok</title><info>API key - This secret your OpenTok account.</info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="start_time" added="1392388264">Start time</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="time_separator" added="1392388343">At</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="can_add_comment" added="1392389107">Can add comment</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="go_to_webinar" added="1392414627">Go to webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_invites_you_to_a_webinar_named_title" added="1392451502"><![CDATA[{full_name} invites you to a webinar named "{title}" as {role}.
+Webinar starts {time}.
+
+--------------------
+{message}
+--------------------
+Link for a webinar:
+{link}]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_enable_creating_of_webinars" added="1392454289"><![CDATA[<title>Enable creating of webinars</title><info>Enable this option if you would like to give users the ability to create webinars.</info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="user_setting_enable_creating_of_webinars" added="1392454474">Enable this option if you would like to give users the ability to create webinars.</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_frame_width" added="1392454828"><![CDATA[<title>Frame width</title><info>Publisher frame width in pixels</info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_frame_height" added="1392454873"><![CDATA[<title>Frame height</title><info>Publisher frame height in pixels</info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="this_webinar_is_closed_you_can_not_participate_in_it" added="1392462300"><![CDATA[This webinar is closed, you can&#039;t participate in it. Please <a href="{link}">click here</a> to browse different webinars.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="delete" added="1392476772">Delete</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="edit" added="1392476815">Edit</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="actions" added="1392477127">Actions</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="report_this_webinar" added="1392477722">Report this webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_liked_your_webinar_title" added="1392480459"><![CDATA[{full_name} liked your webinar "{title}"]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_liked_your_webinar_title_message" added="1392480562"><![CDATA[{full_name} liked your webinar "<a href="{link}">{title}</a>"
+To view this webinar follow the link below:
+<a href="{link}">{link}</a>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="users_liked_gender_own_webinar_title" added="1392480864"><![CDATA[{users} liked {gender} own webinar "{title}"]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="users_liked_your_webinar_title" added="1392481009"><![CDATA[{users} liked your webinar "{title}"]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="users_liked_span_class_drop_data_user_row_full_name_s_span_webinar_title" added="1392481613"><![CDATA[{users} liked <span class="drop_data_user">{row_full_name}&#039;s</span> webinar "{title}"]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_commented_on_your_webinar_title" added="1392481945"><![CDATA[{full_name} commented on your webinar "{title}".]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_commented_on_your_webinar_a_href_link_title_a" added="1392482082"><![CDATA[{full_name} commented on your webinar "<a href="{link}">{title}</a>".
+To see the comment thread, follow the link below:
+<a href="{link}">{link}</a>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_commented_on_gender_webinar" added="1392482169">{full_name} commented on {gender} webinar.</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_commented_on_row_full_name_s_webinar" added="1392482226"><![CDATA[{full_name} commented on {row_full_name}&#039;s link.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_commented_on_gender_webinar_a_href_link_title_a" added="1392482296"><![CDATA[{full_name} commented on {gender} webinar "<a href="{link}">{title}</a>".
+To see the comment thread, follow the link below:
+<a href="{link}">{link}</a>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_commented_on_row_full_name_s_webinar_a_href_link_title_a_message" added="1392482363"><![CDATA[{full_name} commented on {row_full_name}&#039;s webinar "<a href="{link}">{title}</a>".
+To see the comment thread, follow the link below:
+<a href="{link}">{link}</a>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="unable_to_post_a_comment_on_this_item_due_to_privacy_settings" added="1392482431">Unable to post a comment on this item due to privacy settings.</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="users_commented_on_gender_webinar_title" added="1392482513"><![CDATA[{users} commented on {gender} webinar "{title}"]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="users_commented_on_your_webinar_title" added="1392482567"><![CDATA[{users} commented on your webinar "{title}"]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="users_commented_on_span_class_drop_data_user_row_full_name_s_span_webinar_title" added="1392482633"><![CDATA[{users} commented on <span class="drop_data_user">{row_full_name}&#039;s</span> webinar "{title}"]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_opentok_token_expire" added="1392633924"><![CDATA[<title>Opentok token expire</title><info>Opentok publisher, moderator and subscriber token expire at.
+<b>
+Notice:
+token value expiration enter in hours.</b></info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="choose_publishers" added="1392888518">Choose publishers</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="choose_subscribers" added="1392889509">Choose subscribers</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="subscribers" added="1392889532">Subscribers</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="invite_subscribers" added="1392889568">Invite subscribers</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="invite_publishers" added="1393064091">Invite publishers</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="by_full_name" added="1393064895">by {full_name}</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="webinar" added="1393065642">Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="like" added="1393065658">Like</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="unlike" added="1393066486">Unlike</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="invite_via" added="1394197976">Invite via</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="notification" added="1394198077">Notification</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="message" added="1394198102">Message</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_invites_you_to_a_webinar_named_title_at_time" added="1394202582"><![CDATA[{full_name} invites you to a webinar named "{title}" at {time}.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_invites_you_to_a_webinar_named_title_on_time" added="1394202758"><![CDATA[<span class="drop_data_user">{full_name}</span> invites you to a webinar named "{title}" on {time}.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="total_comments_count" added="1394205303">Total comments: {count}</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="total_likes_count" added="1394205573">Total likes: {count}</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="total_publishers_count" added="1394206165">Total publishers: {count}</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="total_subscribers_count" added="1394206455">Total subscribers: {count}</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="begin_in_time" added="1394208518">Begin in {time}</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_array_test" added="1394209840"><![CDATA[<title>array_test</title><info>array_test</info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_total_publishers" added="1394210302"><![CDATA[<title>Total publishers</title><info>Total publishers in webinar</info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="me_invited" added="1394280607">Me Invited</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="webinar_is_closed" added="1394289052">Webinar is closed: {YesOrNo}</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="categories" added="1394290390">Categories</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_via_send" added="1394293260"><![CDATA[<title>Invite via</title><info>Invite member to the webinar via message or notification</info>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="created_by" added="1394313054">Created By</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="webinar_details" added="1394313225">Webinar Details</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="created_at" added="1394313325">Created at</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="begin_in" added="1394315107">Begin in</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="who_s_in_this_webinar" added="1394315420"><![CDATA[Who&#039;s in this webinar]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="invite_moderator" added="1394372045">Invite moderator</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="choose_moderator" added="1394372147">Choose moderator</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="attendees" added="1397067834">Attendees</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="chat" added="1397068118">Chat</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="the_invitation_has_been_sent_successfully" added="1397132241">The invitation has been sent successfully</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="selected_users_have_been_invited" added="1397207737">Selected users have been invited</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="there_was_a_problem" added="1397889602">There was a problem!\n</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="webinar_successfully_recorded_on_the_server" added="1397889922">Webinar successfully recorded on the server</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="problem_writing_audio_file_to_disk" added="1397890023">Problem writing audio file to disk</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="could_not_find_the_webinar" added="1397896007"><![CDATA[Couldn&#039;t find the webinar]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="webinar_type" added="1397915640">Webinar type</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="video" added="1397915707">Video</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="audio" added="1397915728">Audio</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="start_webinar" added="1397932191">Start Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="record_webinar" added="1397933931">Record Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="invite_members" added="1397933991">Invite Members</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="end_webinar" added="1397934015">End Webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="publish" added="1397979336">Publish</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="unpublish" added="1397979391">Unpublish</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="failed_to_delete_the_image" added="1397988725">Failed to delete the image</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="opened_webinars" added="1397991607">Opened Webinars</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="you_can_select_only_one_moderator_who_is_not_subscriber" added="1398502338">You can select only one moderator who is not a subscriber.</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="this_user_is_subscriber_please_choose_different_member" added="1398503212">This user is subscriber, please choose different member.</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_invites_you_to_a_webinar_named_title_on_time_as_moderator" added="1398512573"><![CDATA[<span class="drop_data_user">{full_name}</span> invites you to a webinar named "{title}" on {time} as moderator.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="ffmpeg_wasnot_installed_recording_function_doesnot_work" added="1398681221"><![CDATA[<b>ffmpeg was not installed</b>, recording function doesn&#039;t work.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="publisher" added="1398843892">Publisher</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="moderator" added="1398845625">Moderator</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="subscriber_banned" added="1398861498">Subscriber {full_name} banned</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="ban_this_subscriber_failed" added="1398861699">Ban subscriber {full_name} failed</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="ban_subscriber_full_name_failed" added="1398861879">Ban subscriber {full_name} failed</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="subscriber_full_name_banned" added="1398861929">Subscriber {full_name} banned</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="you_were_banned_by_the_moderator" added="1398864098"><![CDATA[You were banned by the moderator of the webinar, you can not enter to the webinar. Please <a href="{link}">click here</a> to browse different webinars.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="remained_before_start_of_the_webinar" added="1399711409">Remained before start of the webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="admin_menu_add_category" added="1399735474">Add Category</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="admin_menu_manage_categories" added="1399735474">Manage Categories</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="category_order_successfully_updated" added="1399735942">Category order successfully updated</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="category_successfully_deleted" added="1399735958">Category successfully deleted</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="manage_categories" added="1399735974">Manage categories</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="are_you_sure_this_will_delete_all_webinars_that_belong_to_this_category_and_cannot_be_undone" added="1399736026">Are you sure this will delete all webinars that belong to this category and cannot be undone</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="category_successfully_updated" added="1399736300">Category successfully updated</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="category_successfully_added" added="1399736479">Category successfully added</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="create_a_new_category" added="1399736501">Create a new category</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="edit_a_category" added="1399736522">Edit a category</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="submit" added="1399736571">Submit</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="select_form_select" added="1399736587">Select form select</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="webinar_category_details" added="1399736605">Webinar category details</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="parent_category" added="1399736632">Parent category</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="update_order" added="1399736726">Update order</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="select" added="1399737286">Select</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="select_a_sub_category" added="1399737299">Select a sub category</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="name" added="1399737691">Name</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="sub_categories" added="1399738218">Sub categories</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="user_setting_webinar_max_upload_icon_size" added="1399745345"><![CDATA[Max file size for webinar icon upload in kilobits (kb). 
+(1000 kb = 1 mb) 
+For unlimited add "0" without quotes.]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="user_setting_can_recorded_webinars" added="1399745597">Can recorded webinars?</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="recording_function_is_disabled_by_administrator" added="1399746226">Recording function is disabled by administrator</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="can_view_the_recording_of_the_webinar" added="1399888140">Can view recording of the webinar?</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="can_download_recording_of_the_webinar" added="1399888947">Can download recording of the webinar?</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="record" added="1399889098">Record</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="members" added="1399889188">Members</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="records_list" added="1399894671">Records list</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="not_allowed_to_download_this_record" added="1399897474">Not allowed to download this record</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="record_not_found_to_move_in_the_record_list_click_here" added="1399898002"><![CDATA[Record not found to move in the record list click <a href=&#039;link&#039;>here</a>]]></phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="download_record" added="1399898461">Download records</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="download" added="1399913237">Download</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="record_not_found" added="1399915292">Record not found</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="failed_to_delete_the_record" added="1399988102">Failed to delete the record</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="stop_record_webinar" added="1400067045">Stop Record</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="you_can_not_join_to_the_webinar" added="1400324675">You can not join to the webinar</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="please_select_user" added="1400326034">Please select user</phrase>
+		<phrase module_id="webinar" version_id="3.7.4" var_name="show_broadcast" added="1400320525">Show broadcast</phrase>
+		<phrase module_id="webinar" version_id="3.7.4" var_name="reload_page" added="1400322852">Reload page</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="user_setting_can_delete_all_comments" added="1474894984">Can delete all comments</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="setting_comment_time_format" added="1474953599"><![CDATA[<title>Format time</title><info>Format display time of comments</info>]]></phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="setting_comment_ajax_time_refresh" added="1474956840"><![CDATA[<title>Refresh time of comments</title><info>Refresh time of comments via ajax in seconds.</info>]]></phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="setting_comment_wordwrap" added="1474957449"><![CDATA[<title>Comment word wrap</title><info>How many character display on each comment.</info>]]></phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="user_setting_flood_control_webinar_comments" added="1475056112">Flood control webinar comments in seconds</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="create_a_hangout_and_paste_the_link_to_source_field" added="1475498927">Create a hangout and paste the link to source field</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="skip_send_invitation" added="1475498958">Skip send invitation message</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="comments_turned_off_by_webinar_owner" added="1475498989">Comments turned off by webinar owner.</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="please_wait_limit_seconds_before_adding_a_new_comment" added="1475499037">Please wait {limit} seconds before adding a new comment</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="please_provide_correct_url" added="1475499097">Please provide correct URL like eq extra info.</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="extra_info_source" added="1475499134"><![CDATA[Paste Hangouts On Air URL here (Eg: https://www.youtube.com/watch?v=2FWCoqmJlkA OR https://youtu.be/2FWCoqmJlkA)<br/>
+Paste Vimeo video URL here (Eg: https://vimeo.com/129673042)]]></phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="link_to_source" added="1475499157">Link to source</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="enter_a_comment" added="1475499219">Enter a comment</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="delete_this_comment" added="1475499257">Delete this comment</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="adding_your_comment" added="1475499287">Adding your comment</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="comment" added="1475499347">Comment</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="can_view_comments" added="1475499371">Can view comments</phrase>
+	</phrases>
+	<user_group_settings>
+		<setting is_admin_setting="0" module_id="webinar" type="boolean" admin="true" user="true" guest="false" staff="false" module="webinar" ordering="1">enable_creating_of_webinars</setting>
+		<setting is_admin_setting="0" module_id="webinar" type="integer" admin="500" user="500" guest="500" staff="500" module="webinar" ordering="3">webinar_max_upload_icon_size</setting>
+		<setting is_admin_setting="0" module_id="webinar" type="boolean" admin="true" user="false" guest="false" staff="false" module="webinar" ordering="0">can_delete_all_comments</setting>
+		<setting is_admin_setting="0" module_id="webinar" type="integer" admin="0" user="5" guest="5" staff="5" module="webinar" ordering="0">flood_control_webinar_comments</setting>
+	</user_group_settings>
+</module>

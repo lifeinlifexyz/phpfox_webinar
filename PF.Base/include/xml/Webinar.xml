@@ -1,0 +1,100 @@
+<product>
+	<data>
+		<store_id />
+		<product_id>Webinar</product_id>
+		<is_core>0</is_core>
+		<title>CM Webinar App</title>
+		<description>by CodeMake.Org Company</description>
+		<version>4.4.2p1.0.0</version>
+		<latest_version></latest_version>
+		<last_check>0</last_check>
+		<is_active>1</is_active>
+		<url>http://phpfox.ecodemaster.com</url>
+		<url_version_check>http://phpfox.ecodemaster.com</url_version_check>
+		<icon>http://cdn.codemake.org/phpfox/webinar/webinar_logo.png</icon>
+		<vendor></vendor>
+	</data>
+	<installs>
+		<install>
+			<version>4.2.2p1.0.1</version>
+			<install_code><![CDATA[$this->database()->query("CREATE TABLE IF NOT EXISTS `".Phpfox::getT('webinar')."`(
+  `webinar_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `is_search` tinyint(1) NOT NULL DEFAULT '0',
+  `is_closed` tinyint(2) NOT NULL DEFAULT '0',
+  `is_commented` tinyint(1) NOT NULL DEFAULT '0',
+  `user_id` int(10) unsigned NOT NULL,
+  `server_id` text NOT NULL,
+  `allow_comment` tinyint(1) NOT NULL DEFAULT '0',
+  `time_stamp` int(10) unsigned NOT NULL,
+  `start_time` int(10) NOT NULL,
+  `total_view` int(10) unsigned NOT NULL DEFAULT '0',
+  `total_comment` int(10) unsigned NOT NULL DEFAULT '0',
+  `total_like` int(10) unsigned NOT NULL DEFAULT '0',
+  `ordering` int(10) unsigned NOT NULL DEFAULT '0',
+  `image_src` varchar(255) DEFAULT NULL,
+  `link_to_source` varchar(255) NOT NULL,
+  PRIMARY KEY (`webinar_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `".Phpfox::getT('webinar_category')."`(
+  `category_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `parent_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `is_active` tinyint(1) NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL,
+  `time_stamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `used` int(10) unsigned NOT NULL DEFAULT '0',
+  `ordering` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`category_id`),
+  KEY `is_active` (`is_active`),
+  KEY `parent_id` (`parent_id`,`is_active`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+");
+$this->database()->query("
+INSERT INTO `".Phpfox::getT('webinar_category')."` (`parent_id`, `is_active`, `name`, `time_stamp`, `used`, `ordering`) VALUES
+(0, 1, 'Entertainment', 1475497769, 0, 0),
+(0, 1, 'Brand or Product', 1475497794, 0, 0),
+(0, 1, 'Group or Community', 1475497810, 0, 0),
+(0, 1, 'Business', 1475497830, 0, 0);");
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `".Phpfox::getT('webinar_category_data')."`(
+  `webinar_id` int(10) unsigned NOT NULL,
+  `category_id` int(10) unsigned NOT NULL,
+  KEY `category_id` (`category_id`),
+  KEY `video_id` (`webinar_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `".Phpfox::getT('webinar_comment')."`(
+  `comment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `webinar_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_id` int(10) unsigned NOT NULL,
+  `text` varchar(255) NOT NULL,
+  `time_stamp` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`comment_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AVG_ROW_LENGTH=327 AUTO_INCREMENT=1;
+");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `".Phpfox::getT('webinar_subscriber')."`(
+  `webinar_id` int(10) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `is_banned` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+");]]></install_code>
+			<uninstall_code><![CDATA[$this->database()->query("DROP TABLE `".Phpfox::getT('webinar')."`;");
+$this->database()->query("DROP TABLE `".Phpfox::getT('webinar_category')."`;");
+$this->database()->query("DROP TABLE `".Phpfox::getT('webinar_category_data')."`;");
+$this->database()->query("DROP TABLE `".Phpfox::getT('webinar_comment')."`;");
+$this->database()->query("DROP TABLE `".Phpfox::getT('webinar_subscriber')."`;");]]></uninstall_code>
+		</install>
+	</installs>
+	<modules>
+		<module_id>webinar</module_id>
+	</modules>
+</product>

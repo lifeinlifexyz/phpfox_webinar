@@ -1,0 +1,11 @@
+{
+    "id": "Webinar",
+    "type": "product",
+    "name": "CM Webinar App",
+    "description": "by CodeMake.Org Company",
+    "version": "4.4.2p1.0.0",
+    "is_core": 0,
+    "icon": "http:\/\/cdn.codemake.org\/phpfox\/webinar\/webinar_logo.png",
+    "vendor": null,
+    "store_id": ""
+}
