@@ -42,6 +42,8 @@ class Webinar_Component_Controller_View extends Phpfox_Component
                 ->setTitle($aWebinar['title'])
                 ->setBreadcrumb($aWebinar['title'], Phpfox::getLib('url')->permalink('webinar.view', $aWebinar['webinar_id'], $aWebinar['title']));
 
+        }else{
+            Phpfox::getLib('url')->send('webinar');
         }
 
         if ($aWebinar['start_time']>time()){

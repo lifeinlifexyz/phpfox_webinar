@@ -233,9 +233,11 @@ class Webinar_Service_Process extends Phpfox_Service
         if (!isset($aWebinar['webinar_id'])){
             return false;
         }
+
         if (!$isAjax){
             $this->database()->delete(Phpfox::getT("webinar_subscriber"), sprintf("webinar_id = %s", $aWebinar['webinar_id']));
         }
+
         $aSendToUsers = array();
         if (!empty($aMembers)) {
 
@@ -247,8 +249,9 @@ class Webinar_Service_Process extends Phpfox_Service
                 }
             }
 
-            if ($isAjax == false && $bSkipSendInvite == 0) {
-                if (Phpfox::getParam('webinar.via_send') == trim('Message') || strpos(Phpfox::getParam('webinar.via_send'), 'Message')) {
+            if ($bSkipSendInvite == 0) {
+
+                if (trim(Phpfox::getParam('webinar.via_send')) == 'Message' || strpos(Phpfox::getParam('webinar.via_send'), 'Message')) {
                     if (!empty($aSendToUsers)) {
 
                         $sMessage = Phpfox::getPhrase('webinar.full_name_invites_you_to_a_webinar_named_title', array(
@@ -275,11 +278,13 @@ class Webinar_Service_Process extends Phpfox_Service
 
 
                 } else {
+
                     if (!empty($aSendToUsers)) {
+
                         foreach ($aSendToUsers as $iUser) {
-                            Phpfox::getService('notification.process')->add('webinar', $aWebinar['webinar_id'], $iUser, Phpfox::getUserId());
+                            $bNotificationSend = Phpfox::getService('notification.process')->add('webinar', $aWebinar['webinar_id'], $iUser, Phpfox::getUserId());
                         }
-                        if ($isAjax) {
+                        if ($isAjax && $bNotificationSend) {
                             Phpfox::getLib('ajax')->alert(Phpfox::getPhrase('webinar.the_invitation_has_been_sent_successfully'));
                             //Phpfox::getLib('ajax')->call("$('#alert_message #public_message').text('".Phpfox::getPhrase('webinar.the_invitation_has_been_sent_successfully')."').fadeIn(100);");
                             //Phpfox::getLib('ajax')->call("$('#alert_message #public_message').fadeOut(5000);");

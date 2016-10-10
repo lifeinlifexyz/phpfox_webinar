@@ -13,7 +13,7 @@
 		<menu module_id="webinar" parent_var_name="" m_connection="webinar.index" var_name="menu_webinar_create_a_webinar_2ab2693ac3f523b9a3033ea8412a1882" ordering="154" url_value="webinar.add" version_id="3.7.0beta2" disallow_access="" module="webinar" />
 	</menus>
 	<settings>
-		<setting group="" module_id="webinar" is_hidden="0" type="drop" var_name="via_send" phrase_var_name="setting_via_send" ordering="1" version_id="3.7.0"><![CDATA[a:2:{s:7:"default";s:7:"Message";s:6:"values";a:2:{i:0;s:7:"Message";i:1;s:12:"Notification";}}]]></setting>
+		<setting group="" module_id="webinar" is_hidden="0" type="drop" var_name="via_send" phrase_var_name="setting_via_send" ordering="1" version_id="3.7.0"><![CDATA[a:2:{s:7:"default";s:12:"Notification";s:6:"values";a:2:{i:0;s:12:"Notification";i:1;s:7:"Message";}}]]></setting>
 		<setting group="" module_id="webinar" is_hidden="0" type="string" var_name="comment_time_format" phrase_var_name="setting_comment_time_format" ordering="1" version_id="4.4.2">M j, g:i a</setting>
 		<setting group="" module_id="webinar" is_hidden="0" type="string" var_name="comment_ajax_time_refresh" phrase_var_name="setting_comment_ajax_time_refresh" ordering="1" version_id="4.4.2">5</setting>
 		<setting group="" module_id="webinar" is_hidden="0" type="integer" var_name="comment_wordwrap" phrase_var_name="setting_comment_wordwrap" ordering="1" version_id="4.4.2">100</setting>
@@ -96,14 +96,15 @@
 		<phrase module_id="webinar" version_id="3.7.0" var_name="time_separator" added="1392388343">At</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="can_add_comment" added="1392389107">Can add comment</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="go_to_webinar" added="1392414627">Go to webinar</phrase>
-		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_invites_you_to_a_webinar_named_title" added="1392451502"><![CDATA[{full_name} invites you to a webinar named "{title}" as {role}.
+		<phrase module_id="webinar" version_id="3.7.0" var_name="full_name_invites_you_to_a_webinar_named_title" added="1392451502"><![CDATA[{full_name} invites you to a webinar named "{title}".
 Webinar starts {time}.
 
 --------------------
 {message}
 --------------------
 Link for a webinar:
-{link}]]></phrase>
+{link}
+]]></phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_enable_creating_of_webinars" added="1392454289"><![CDATA[<title>Enable creating of webinars</title><info>Enable this option if you would like to give users the ability to create webinars.</info>]]></phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="user_setting_enable_creating_of_webinars" added="1392454474">Enable this option if you would like to give users the ability to create webinars.</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="setting_frame_width" added="1392454828"><![CDATA[<title>Frame width</title><info>Publisher frame width in pixels</info>]]></phrase>
