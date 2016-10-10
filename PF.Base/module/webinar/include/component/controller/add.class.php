@@ -137,7 +137,8 @@ class Webinar_Component_Controller_Add extends Phpfox_Component
             ))
             ->assign(
             array("sCategories" => $sCategories,
-                  "bBackAdmincp" => $bBackAdmincp
+                  "bBackAdmincp" => $bBackAdmincp,
+		  "iMaxIconSize" => Phpfox::getUserParam('webinar.webinar_max_upload_icon_size')
             ));
 
     }

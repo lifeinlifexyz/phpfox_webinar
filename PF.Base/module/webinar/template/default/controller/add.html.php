@@ -119,7 +119,7 @@ defined('PHPFOX') or exit('NO DICE!');
 				<input id="image" type="file" name="image"/>
 
 				<div class="extra_info">
-					{phrase var='webinar.you_can_upload_a_jpg_gif_or_png_file'}
+					{phrase var='webinar.you_can_upload_a_jpg_gif_or_png_file' size=$iMaxIconSize}
 				</div>
 			</div>
 		</div>

@@ -16,17 +16,15 @@ class Webinar_Service_Template extends Phpfox_Service
 
     public function __construct()
     {
-        Phpfox::getLib('setting')->setParam('webinar.module_image_url', Phpfox::getParam('core.path') . 'module/webinar/static/image/default/default/');
+        Phpfox::getLib('setting')->setParam('webinar.module_image_url', Phpfox::getParam('core.path_file') . 'module/webinar/static/image/default/default/');
         Phpfox::getLib('setting')->setParam('webinar.module_image_dir', PHPFOX_DIR . 'module'.PHPFOX_DS.'webinar'.PHPFOX_DS.'static'.PHPFOX_DS.'image'.PHPFOX_DS.'default'.PHPFOX_DS.'default'.PHPFOX_DS);
         Phpfox::getLib('setting')->setParam('webinar.image_dir', Phpfox::getParam('core.dir_pic') . 'webinar'.PHPFOX_DS);
         Phpfox::getLib('setting')->setParam('webinar.image_url', Phpfox::getParam('core.url_pic') . 'webinar/');
     }
 
     public function image($sPath = '', $sImage = '', $sSize = '', $aParams = array(), $bUrl = false){
-
         $sDestinationDir = '';
         $sDestinationUrl = '';
-
         $sHtmlImage = '';
         if (!empty($sPath)){
             $sPathUrl = str_replace('dir', 'url', $sPath);
@@ -36,7 +34,6 @@ class Webinar_Service_Template extends Phpfox_Service
                 $sDestinationDir .= Phpfox::getParam($sPathDir);
             }
         }
-
         if (strpos($sImage, '%s')){			
             $sDestinationUrl .= sprintf($sImage, $sSize);
             $sDestinationDir .= str_replace(' ', '', preg_replace('#/#', PHPFOX_DS, sprintf($sImage, $sSize)));			
@@ -47,7 +44,7 @@ class Webinar_Service_Template extends Phpfox_Service
 		
         if (!file_exists($sDestinationDir) || empty($sImage)){
             $sDestinationUrl = file_exists(Phpfox::getParam('webinar.module_image_dir').str_replace(' ', '', preg_replace('#/#', PHPFOX_DS, sprintf("noPhoto%s.png", $sSize))))?Phpfox::getParam('webinar.module_image_url').sprintf("noPhoto%s.png", $sSize):Phpfox::getParam('webinar.module_image_url')."noPhoto.png";
-        }		
+        }
         if (!$bUrl){
             $sHtmlImage .= '<img src="'.$sDestinationUrl.'" ';
             foreach($aParams as $sKey=>$sParam){

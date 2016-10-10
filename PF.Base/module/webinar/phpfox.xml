@@ -71,7 +71,7 @@
 		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="show_this_webinar_in_search_results" added="1391526128">Show this webinar in search results</phrase>
 		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="title" added="1391543354">Title</phrase>
 		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="description" added="1391543418"><![CDATA[Description & Message to the invitation]]></phrase>
-		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="you_can_upload_a_jpg_gif_or_png_file" added="1391556508">You can upload a jpg, gif or png file</phrase>
+		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="you_can_upload_a_jpg_gif_or_png_file" added="1391556508">You can upload a jpg, gif or png file. Max file size {size} kb.</phrase>
 		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="click_here_to_delete_this_image_and_upload_a_new_one_in_its_place" added="1391556588"><![CDATA[Click <a href="#" onclick="{javascript}">here</a> to delete this image and upload a new one in its place.]]></phrase>
 		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="photo" added="1391556750">Photo</phrase>
 		<phrase module_id="webinar" version_id="3.7.0beta2" var_name="closed" added="1391556995">Closed</phrase>
