@@ -90,7 +90,7 @@ class Webinar_Component_Controller_Add extends Phpfox_Component
 
         }
 
-        if (!$bIsEdit && !Phpfox::getUserParam('webinar.enable_creating_of_webinars')) {
+        if (empty($bIsEdit) && !Phpfox::getUserParam('webinar.enable_creating_of_webinars')) {
             $this->url()->send('webinar', null, Phpfox::getPhrase('webinar.current_time_cannot_be_created_new_webinar'));
         }
 
