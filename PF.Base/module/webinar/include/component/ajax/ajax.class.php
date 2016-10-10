@@ -21,12 +21,7 @@ class Webinar_Component_Ajax_Ajax extends Phpfox_Ajax
     public function blockInviteSubscribers(){
         return Phpfox::getBlock('friend.search', array('input'=>'subscribers'));
     }
-
-    public function chooseModerator()
-    {
-        return Phpfox::getBlock('friend.search', array('input'=>'moderator'));
-    }
-
+    
     public function invite(){
         $aUsers = $this->get('users');
         $iWebinarId = $this->get('webinar_id');
@@ -123,7 +118,7 @@ class Webinar_Component_Ajax_Ajax extends Phpfox_Ajax
             return false;
         }
 
-        // Add the shoutout
+        // Add the comment
         if ($iId = Phpfox::getService('webinar.comment.process')->add(Phpfox::getUserId(), $this->get('comment'), $this->get('webinar_id', null)))
         {
             // Get all the default user fields we use
@@ -150,7 +145,7 @@ class Webinar_Component_Ajax_Ajax extends Phpfox_Ajax
                 'time_stamp' => PHPFOX_TIME,
                 'text' => $sText
             );
-
+            Phpfox::getService('webinar.process')->updateCounterComment($this->get('webinar_id'));
             // Assign the variables for the template and get the template
             $this->template()->assign(array(
                     'bCommentAjax' => true,

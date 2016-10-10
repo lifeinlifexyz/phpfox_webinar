@@ -314,11 +314,15 @@ class Webinar_Service_Process extends Phpfox_Service
         if (empty($iId)){
             return false;
         }
-        $aRows = $this->database()->select('DISTINCT' . Phpfox::getUserField() . ', ws.*, ls.user_id AS is_online')
-            ->from(Phpfox::getT('log_session'), 'ls')
+        if (Phpfox::getParam('core.store_only_users_in_session')) {
+            $this->database()->from(Phpfox::getT('session'), 'ls');
+        } else {
+            $this->database()->from(Phpfox::getT('log_session'), 'ls');
+        }
+        $aRows = $this->database()->select('DISTINCT' . Phpfox::getUserField() . ', ws.*, ls.user_id AS is_online, ls.last_activity')
             ->leftJoin(Phpfox::getT('webinar_subscriber'), 'ws', 'ws.user_id = ls.user_id')
             ->leftJoin(Phpfox::getT('user'), 'u', 'u.user_id = ws.user_id')
-            ->where('ws.is_banned = 0 AND ws.webinar_id = '.(int)$iId)
+            ->where('ws.is_banned = 0 AND ws.webinar_id = '.(int)$iId.' AND ls.last_activity > \'' . Phpfox::getService('log.session')->getActiveTime() . '\'')
             ->execute('getRows');
         foreach ($aRows as $iKey=>$aRow){
             $aRows[$iKey]['profile_url'] = Phpfox::getLib('url')->makeUrl($aRow['user_name']);

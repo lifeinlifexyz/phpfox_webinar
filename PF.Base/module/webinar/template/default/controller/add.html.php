@@ -131,7 +131,7 @@ defined('PHPFOX') or exit('NO DICE!');
         </div>
         <div class="table_right">
             <label class="radio-inline"><input type="radio" {if isset($aForms.is_closed) && $aForms.is_closed == 1}checked="checked"{/if} name="val[is_closed]" value="1">{phrase var='webinar.yes'}</label>
-            <label class="radio-inline"><input type="radio" {if isset($aForms.is_closed) && $aForms.is_closed == 0}checked="checked"{/if} value="0" name="val[is_closed]">{phrase var='webinar.no'}</label>
+            <label class="radio-inline"><input type="radio" {if isset($aForms.is_closed) && $aForms.is_closed == 0}checked="checked"{elseif !isset($aForms.is_closed)}checked="checked"{/if} value="0" name="val[is_closed]">{phrase var='webinar.no'}</label>
         </div>
     </div>
     <div class="table">
@@ -140,14 +140,14 @@ defined('PHPFOX') or exit('NO DICE!');
         </div>
         <div class="table_right">
             <div class="table_right">
-                <label class="radio-inline"><input type="radio" {if isset($aForms.is_commented) && $aForms.is_commented == 1}checked="checked"{/if} name="val[is_commented]" value="1">{phrase var='webinar.yes'}</label>
+                <label class="radio-inline"><input type="radio" {if isset($aForms.is_commented) && $aForms.is_commented == 1}checked="checked"{elseif !isset($aForms.is_commented)}checked="checked"{/if} name="val[is_commented]" value="1">{phrase var='webinar.yes'}</label>
                 <label class="radio-inline"><input type="radio" {if isset($aForms.is_commented) && $aForms.is_commented == 0}checked="checked"{/if} value="0" name="val[is_commented]">{phrase var='webinar.no'}</label>
             </div>
         </div>
     </div>
     <div class="table">
         <div class="table_right">
-            <input type="checkbox" name="val[is_search]" id="is_search" value="1" {if isset($aForms.is_search) && $aForms.is_search == 1} checked="checked" {/if}/>
+            <input type="checkbox" name="val[is_search]" id="is_search" value="1" {if isset($aForms.is_search) && $aForms.is_search == 1} checked="checked" {elseif !isset($aForms.is_search)} checked="checked" {/if}/>
             {phrase var='webinar.show_this_webinar_in_search_results'}
         </div>
     </div>
