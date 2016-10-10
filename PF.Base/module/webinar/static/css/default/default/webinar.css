@@ -52,4 +52,8 @@
     #webinar_text{
         height: 150px;
     }
+    .webinar_last_post
+    {
+        display: none;
+    }
 }
