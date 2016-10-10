@@ -29,7 +29,7 @@ class Webinar_Component_Block_Comment_Display extends Phpfox_Component
 		}
 
 		$aMessages = Phpfox::getService('webinar.comment')->getMessages($iWebinarId, 5);
-
+		
 		// Assign the vars to the template
 		$this->template()->assign(array(
 				'sHeader' => Phpfox::getPhrase('webinar.comments'),

@@ -261,6 +261,7 @@ Paste Vimeo video URL here (Eg: https://vimeo.com/129673042)]]></phrase>
 		<phrase module_id="webinar" version_id="4.4.2" var_name="delete_this_comment" added="1475499257">Delete this comment</phrase>
 		<phrase module_id="webinar" version_id="4.4.2" var_name="adding_your_comment" added="1475499287">Adding your comment</phrase>
 		<phrase module_id="webinar" version_id="4.4.2" var_name="comment" added="1475499347">Comment</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="comments" added="1475499360">Comments</phrase>
 		<phrase module_id="webinar" version_id="4.4.2" var_name="can_view_comments" added="1475499371">Can view comments</phrase>
 	</phrases>
 	<user_group_settings>
