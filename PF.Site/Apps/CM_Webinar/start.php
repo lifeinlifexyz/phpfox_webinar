@@ -16,7 +16,11 @@ group('/webinar', function (){
     route('/admincp', function (){
         auth()->isAdmin(true);
         if(!Phpfox::getService('admincp.product')->isProduct('Webinar')){
-            echo('Webinar module not installed, please install the module on the <a href="'.Phpfox::getLib('url')->makeUrl('admincp').'">dashboard</a>');
+            if (file_exists(PHPFOX_DIR_XML.'Webinar.xml')){
+                echo('Webinar module not installed, please install the module on the <a href="'.Phpfox::getLib('url')->makeUrl('admincp').'">dashboard</a>');
+            } else {
+                echo('Webinar module not installed');
+            }
             return 'controller';
         }
         if (Phpfox_Module::instance()->isModule('webinar')){
@@ -30,7 +34,11 @@ group('/webinar', function (){
     route('/admincp/add', function (){
         auth()->isAdmin(true);
         if(!Phpfox::getService('admincp.product')->isProduct('Webinar')){
-            echo('Webinar module not installed, please install the module on the <a href="'.Phpfox::getLib('url')->makeUrl('admincp').'">dashboard</a>');
+            if (file_exists(PHPFOX_DIR_XML.'Webinar.xml')){
+                echo('Webinar module not installed, please install the module on the <a href="'.Phpfox::getLib('url')->makeUrl('admincp').'">dashboard</a>');
+            } else {
+                echo('Webinar module not installed');
+            }
             return 'controller';
         }
         if (Phpfox_Module::instance()->isModule('webinar')){

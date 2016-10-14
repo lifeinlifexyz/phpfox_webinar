@@ -13,7 +13,11 @@ defined('PHPFOX') or exit('NO DICE!');
 
 ?>
 <?php if(!Phpfox::getService('admincp.product')->isProduct('Webinar')): ?>
+	<?php if (file_exists(PHPFOX_DIR_XML.'Webinar.xml')): ?>
 		Webinar module not installed, please install the module on the <a href="<?php echo Phpfox::getLib('url')->makeUrl('admincp');?>">dashboard</a>
+	<?php else: ?>
+		Webinar module not installed
+	<?php endif;?>
 <?php else:?>
 	{if Phpfox::isModule('webinar')}
 	<div id="js_menu_drop_down" style="display:none;">
