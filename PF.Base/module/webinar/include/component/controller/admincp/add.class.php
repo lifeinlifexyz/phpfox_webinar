@@ -25,7 +25,7 @@ class Webinar_Component_Controller_Admincp_Add extends Phpfox_Component
 			{
 				$bIsEdit = true;
 				
-				$this->template()->setHeader('<script type="text/javascript">$Behavior.webinar_controller_add_2 = function(){$(\'#js_mp_category_item_' . $aCategory['parent_id'] . '\').attr(\'selected\', true);};</script>')->assign('aForms', $aCategory);
+				$this->template()->setHeader('<style>.apps_menu{display:none;}.apps_content{margin-left: 0px;}</style><script type="text/javascript">$Behavior.webinar_controller_add_2 = function(){$(\'#js_mp_category_item_' . $aCategory['parent_id'] . '\').attr(\'selected\', true);};</script>')->assign('aForms', $aCategory);
 			}
 		}		
 		
@@ -35,20 +35,20 @@ class Webinar_Component_Controller_Admincp_Add extends Phpfox_Component
 			{
 				if (Phpfox::getService('webinar.category.process')->update($aCategory['category_id'], $aVals))
 				{
-					$this->url()->send('admincp.webinar.add', array('id' => $aCategory['category_id']), Phpfox::getPhrase('webinar.category_successfully_updated'));
+					$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], Phpfox::getPhrase('webinar.category_successfully_updated'));
 				}
 			}
 			else 
 			{
 				if (Phpfox::getService('webinar.category.process')->add($aVals))
 				{
-					$this->url()->send('admincp.webinar.add', null, Phpfox::getPhrase('webinar.category_successfully_added'));
+					$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], Phpfox::getPhrase('webinar.category_successfully_added'));
 				}
 			}
 		}
 		
 		$this->template()->setTitle(($bIsEdit ? Phpfox::getPhrase('webinar.edit_a_category') : Phpfox::getPhrase('webinar.create_a_new_category')))
-			->setBreadcrumb(($bIsEdit ? Phpfox::getPhrase('webinar.edit_a_category') : Phpfox::getPhrase('webinar.create_a_new_category')), $this->url()->makeUrl('admincp.webinar'))
+			->setBreadcrumb(($bIsEdit ? Phpfox::getPhrase('webinar.edit_a_category') : Phpfox::getPhrase('webinar.create_a_new_category')), $this->url()->makeUrl('admincp.app', ['id'=>'CM_Webinar']))
 			->assign(array(
 					'sOptions' => Phpfox::getService('webinar.category')->display('option')->get(),
 					'bIsEdit' => $bIsEdit

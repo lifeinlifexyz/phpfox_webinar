@@ -1,11 +1,11 @@
 {
-    "id": "Webinar",
-    "type": "product",
+    "id": "CM_Webinar",
+    "internal_id": 0,
+    "version": "1.0.0",
+    "current_version": "4.4.2p1.0.0",
     "name": "CM Webinar App",
-    "description": "by CodeMake.Org Company",
-    "version": "4.4.2p1.0.0",
-    "is_core": 0,
-    "icon": "http:\/\/cdn.codemake.org\/phpfox\/webinar\/webinar_logo.png",
-    "vendor": null,
-    "store_id": ""
+    "module": true,
+    "type": "app",
+    "icon": "<div class=\"app_icons image_load\" data-src=\"\/\/cdn.codemake.org\/phpfox\/webinar\/webinar_logo.png\"><\/div>",
+    "is_core": false
 }

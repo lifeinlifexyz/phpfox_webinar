@@ -1,4 +1,9 @@
 [
+    "PF.Site\/Apps\/CM_Webinar\/app.json",
+    "PF.Site\/Apps\/CM_Webinar\/assets\/autoload.css",
+    "PF.Site\/Apps\/CM_Webinar\/assets\/autoload.js",
+    "PF.Site\/Apps\/CM_Webinar\/start.php",
+    "PF.Site\/Apps\/CM_Webinar\/uninstall.php",
     "PF.Base\/module\/webinar\/include\/component\/ajax\/ajax.class.php",
     "PF.Base\/module\/webinar\/include\/component\/ajax\/index.html",
     "PF.Base\/module\/webinar\/include\/component\/block\/attendees.class.php",
@@ -27,6 +32,7 @@
     "PF.Base\/module\/webinar\/include\/service\/template.class.php",
     "PF.Base\/module\/webinar\/include\/service\/utils.class.php",
     "PF.Base\/module\/webinar\/include\/service\/webinar.class.php",
+    "PF.Base\/module\/webinar\/install\/version\/v3.phpfox",
     "PF.Base\/module\/webinar\/phpfox.xml",
     "PF.Base\/module\/webinar\/static\/css\/default\/default\/add.css",
     "PF.Base\/module\/webinar\/static\/css\/default\/default\/flipclock.css",

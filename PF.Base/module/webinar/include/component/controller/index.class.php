@@ -15,7 +15,7 @@ class Webinar_Component_Controller_Index extends Phpfox_Component
 {
 
 	public function process(){
-
+        
         $sView = $this->request()->get('view', false);
         $aWebinarDisplays = array(10, 20, 30);
 

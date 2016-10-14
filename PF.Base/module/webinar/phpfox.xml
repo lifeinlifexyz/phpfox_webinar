@@ -4,20 +4,14 @@
 		<product_id>Webinar</product_id>
 		<is_core>0</is_core>
 		<is_active>1</is_active>
-		<is_menu>1</is_menu>
-		<menu><![CDATA[a:2:{s:31:"webinar.admin_menu_add_category";a:1:{s:3:"url";a:2:{i:0;s:7:"webinar";i:1;s:3:"add";}}s:36:"webinar.admin_menu_manage_categories";a:1:{s:3:"url";a:1:{i:0;s:7:"webinar";}}}]]></menu>
+		<is_menu>0</is_menu>
+		<menu />
 		<phrase_var_name>module_webinar</phrase_var_name>
 	</data>
 	<menus>
 		<menu module_id="webinar" parent_var_name="" m_connection="main" var_name="menu_webinar_webinar_fad58de7366495db4650cfefac2fcd61" ordering="152" url_value="webinar" version_id="3.7.0" disallow_access="" module="webinar" />
 		<menu module_id="webinar" parent_var_name="" m_connection="webinar.index" var_name="menu_webinar_create_a_webinar_2ab2693ac3f523b9a3033ea8412a1882" ordering="154" url_value="webinar.add" version_id="3.7.0beta2" disallow_access="" module="webinar" />
 	</menus>
-	<settings>
-		<setting group="" module_id="webinar" is_hidden="0" type="drop" var_name="via_send" phrase_var_name="setting_via_send" ordering="1" version_id="3.7.0"><![CDATA[a:2:{s:7:"default";s:12:"Notification";s:6:"values";a:2:{i:0;s:12:"Notification";i:1;s:7:"Message";}}]]></setting>
-		<setting group="" module_id="webinar" is_hidden="0" type="string" var_name="comment_time_format" phrase_var_name="setting_comment_time_format" ordering="1" version_id="4.4.2">M j, g:i a</setting>
-		<setting group="" module_id="webinar" is_hidden="0" type="string" var_name="comment_ajax_time_refresh" phrase_var_name="setting_comment_ajax_time_refresh" ordering="1" version_id="4.4.2">5</setting>
-		<setting group="" module_id="webinar" is_hidden="0" type="integer" var_name="comment_wordwrap" phrase_var_name="setting_comment_wordwrap" ordering="1" version_id="4.4.2">100</setting>
-	</settings>
 	<blocks>
 		<block type_id="0" m_connection="webinar.index" module_id="webinar" component="categories" location="1" is_active="1" ordering="2" disallow_access="" can_move="0">
 			<title>Categories</title>
@@ -204,8 +198,6 @@ token value expiration enter in hours.</b></info>]]></phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="subscriber_full_name_banned" added="1398861929">Subscriber {full_name} banned</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="you_were_banned_by_the_moderator" added="1398864098"><![CDATA[You were banned by the moderator of the webinar, you can not enter to the webinar. Please <a href="{link}">click here</a> to browse different webinars.]]></phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="remained_before_start_of_the_webinar" added="1399711409">Remained before start of the webinar</phrase>
-		<phrase module_id="webinar" version_id="3.7.0" var_name="admin_menu_add_category" added="1399735474">Add Category</phrase>
-		<phrase module_id="webinar" version_id="3.7.0" var_name="admin_menu_manage_categories" added="1399735474">Manage Categories</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="category_order_successfully_updated" added="1399735942">Category order successfully updated</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="category_successfully_deleted" added="1399735958">Category successfully deleted</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="manage_categories" added="1399735974">Manage categories</phrase>
@@ -213,7 +205,7 @@ token value expiration enter in hours.</b></info>]]></phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="category_successfully_updated" added="1399736300">Category successfully updated</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="category_successfully_added" added="1399736479">Category successfully added</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="create_a_new_category" added="1399736501">Create a new category</phrase>
-		<phrase module_id="webinar" version_id="3.7.0" var_name="edit_a_category" added="1399736522">Edit a category</phrase>
+		<phrase module_id="webinar" version_id="3.7.0" var_name="edit_a_category" added="1399736522">Webinar/edit a category</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="submit" added="1399736571">Submit</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="select_form_select" added="1399736587">Select form select</phrase>
 		<phrase module_id="webinar" version_id="3.7.0" var_name="webinar_category_details" added="1399736605">Webinar category details</phrase>
@@ -263,6 +255,7 @@ Paste Vimeo video URL here (Eg: https://vimeo.com/129673042)]]></phrase>
 		<phrase module_id="webinar" version_id="4.4.2" var_name="comment" added="1475499347">Comment</phrase>
 		<phrase module_id="webinar" version_id="4.4.2" var_name="comments" added="1475499360">Comments</phrase>
 		<phrase module_id="webinar" version_id="4.4.2" var_name="can_view_comments" added="1475499371">Can view comments</phrase>
+		<phrase module_id="webinar" version_id="4.4.2" var_name="admin_menu_add_category" added="1476376780">Add Category</phrase>
 	</phrases>
 	<user_group_settings>
 		<setting is_admin_setting="0" module_id="webinar" type="boolean" admin="true" user="true" guest="false" staff="false" module="webinar" ordering="1">enable_creating_of_webinars</setting>

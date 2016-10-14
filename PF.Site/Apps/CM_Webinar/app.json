@@ -1,0 +1,48 @@
+{
+    "id": "CM_Webinar",
+    "alias": "cmwebinar",
+    "name": "CM Webinar App",
+    "version": "1.0.0",
+    "store_id": 1597,
+    "vendor": "CodeMake.Org - See all our products <a href=\"//store.phpfox.com/techie/u/ecodemaster\" target=_new>HERE</a> - contact us at: support@codemake.org",
+    "icon": "//cdn.codemake.org/phpfox/webinar/webinar_logo.png",
+    "admincp_route": "/webinar/admincp",
+    "admincp_menu": {
+        "Manage Categories": "/webinar"
+    },
+    "admincp_action_menu": {
+        "/webinar/admincp/add": "New Category"
+    },
+    "settings": {
+        "cm_webinar_enabled": {
+            "info": "Webinar App Enabled",
+            "type": "input:radio",
+            "value": 1,
+            "js_variable": true
+        },
+        "cm_webinar_via_send": {
+            "info": "Invite subscribers via",
+            "type": "select",
+            "options":{
+                "Notification":"Notification",
+                "Message":"Message"
+            },
+            "js_variable": true
+        },
+        "cm_webinar_comment_time_format": {
+            "info": "Format display time of comments",
+            "value":"M j, g:i a",
+            "js_variable": true
+        },
+        "cm_webinar_comment_ajax_time_refresh": {
+            "info": "Refresh time of comments via ajax in seconds",
+            "value":"5",
+            "js_variable": true
+        },
+        "cm_webinar_comment_wordwrap": {
+            "info": "Comment word wrap",
+            "value":"100",
+            "js_variable": true
+        }
+    }
+}
