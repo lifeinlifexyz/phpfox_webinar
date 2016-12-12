@@ -17,7 +17,7 @@ class Webinar_Component_Controller_View extends Phpfox_Component
     public function process()
     {
         Phpfox::isUser(true);
-        $this->template()->setBreadcrumb(Phpfox::getPhrase('webinar.all_webinars'), Phpfox::getLib('url')->makeUrl('webinar'));
+        $this->template()->setBreadcrumb(_p('webinar.all_webinars'), Phpfox::getLib('url')->makeUrl('webinar'));
         $aWebinar = array();
 
         if ($iId = $this->request()->get('req3')) {

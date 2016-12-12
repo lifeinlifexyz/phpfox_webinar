@@ -22,7 +22,7 @@ class Webinar_Component_Controller_Admincp_Index extends Phpfox_Component
 		{
 			if (Phpfox::getService('webinar.category.process')->updateOrder($aOrder))
 			{
-				$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], null, Phpfox::getPhrase('webinar.category_order_successfully_updated'));
+				$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], null, _p('webinar.category_order_successfully_updated'));
 			}
 		}		
 		
@@ -30,11 +30,11 @@ class Webinar_Component_Controller_Admincp_Index extends Phpfox_Component
 		{
 			if (Phpfox::getService('webinar.category.process')->delete($iDelete))
 			{
-				$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], null, Phpfox::getPhrase('webinar.category_successfully_deleted'));
+				$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], null, _p('webinar.category_successfully_deleted'));
 			}
 		}
-		$this->template()->setTitle(Phpfox::getPhrase('webinar.manage_categories'))
-			->setBreadcrumb(Phpfox::getPhrase('webinar.manage_categories'), $this->url()->makeUrl('admincp.webinar'))
+		$this->template()->setTitle(_p('webinar.manage_categories'))
+			->setBreadcrumb(_p('webinar.manage_categories'), $this->url()->makeUrl('admincp.webinar'))
 			->setPhrase(array('webinar.are_you_sure_this_will_delete_all_webinars_that_belong_to_this_category_and_cannot_be_undone'))
 			->setHeader(array(
 //					'jquery/ui.js' => 'static_script',

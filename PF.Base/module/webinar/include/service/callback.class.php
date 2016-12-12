@@ -62,15 +62,15 @@ class Webinar_Service_Callback extends Phpfox_Service
 		$sPhrase = '';
 		if ($aNotification['user_id'] == $aRow['user_id'])
 		{
-			$sPhrase = Phpfox::getPhrase('webinar.users_liked_gender_own_webinar_title', array('users' => $sUsers, 'gender' => Phpfox::getService('user')->gender($aRow['gender'], 1), 'title' => $sTitle));
+			$sPhrase = _p('webinar.users_liked_gender_own_webinar_title', array('users' => $sUsers, 'gender' => Phpfox::getService('user')->gender($aRow['gender'], 1), 'title' => $sTitle));
 		}
 		elseif ($aRow['user_id'] == Phpfox::getUserId())
 		{
-			$sPhrase = Phpfox::getPhrase('webinar.users_liked_your_webinar_title', array('users' => $sUsers, 'title' => $sTitle));
+			$sPhrase = _p('webinar.users_liked_your_webinar_title', array('users' => $sUsers, 'title' => $sTitle));
 		}
 		else
 		{
-			$sPhrase = Phpfox::getPhrase('webinar.users_liked_span_class_drop_data_user_row_full_name_s_span_webinar_title', array('users' => $sUsers, 'row_full_name' => $aRow['full_name'], 'title' => $sTitle));
+			$sPhrase = _p('webinar.users_liked_span_class_drop_data_user_row_full_name_s_span_webinar_title', array('users' => $sUsers, 'row_full_name' => $aRow['full_name'], 'title' => $sTitle));
 		}
 
 		return array(
@@ -115,13 +115,13 @@ class Webinar_Service_Callback extends Phpfox_Service
 		Phpfox::getService('comment.process')->notify(array(
 				'user_id' => $aRow['user_id'],
 				'item_id' => $aRow['webinar_id'],
-				'owner_subject' => Phpfox::getPhrase('webinar.full_name_commented_on_your_webinar_title', array('full_name' => Phpfox::getUserBy('full_name'), 'title' => $this->preParse()->clean($aRow['title'], 100))),
-				'owner_message' => Phpfox::getPhrase('webinar.full_name_commented_on_your_webinar_a_href_link_title_a', array('full_name' => Phpfox::getUserBy('full_name'), 'link' => $sLink, 'title' => $aRow['title'])),
+				'owner_subject' => _p('webinar.full_name_commented_on_your_webinar_title', array('full_name' => Phpfox::getUserBy('full_name'), 'title' => $this->preParse()->clean($aRow['title'], 100))),
+				'owner_message' => _p('webinar.full_name_commented_on_your_webinar_a_href_link_title_a', array('full_name' => Phpfox::getUserBy('full_name'), 'link' => $sLink, 'title' => $aRow['title'])),
 				'owner_notification' => 'comment.add_new_comment',
 				'notify_id' => 'comment_webinar',
 				'mass_id' => 'webinar',
-				'mass_subject' => (Phpfox::getUserId() == $aRow['user_id'] ? Phpfox::getPhrase('webinar.full_name_commented_on_gender_webinar', array('full_name' => Phpfox::getUserBy('full_name'), 'gender' => Phpfox::getService('user')->gender($aRow['gender'], 1))) : Phpfox::getPhrase('webinar.full_name_commented_on_row_full_name_s_webinar', array('full_name' => Phpfox::getUserBy('full_name'), 'row_full_name' => $aRow['full_name']))),
-				'mass_message' => (Phpfox::getUserId() == $aRow['user_id'] ? Phpfox::getPhrase('webinar.full_name_commented_on_gender_webinar_a_href_link_title_a', array('full_name' => Phpfox::getUserBy('full_name'), 'gender' => Phpfox::getService('user')->gender($aRow['gender'], 1), 'link' => $sLink, 'title' => $aRow['title'])) : Phpfox::getPhrase('webinar.full_name_commented_on_row_full_name_s_webinar_a_href_link_title_a_message', array('full_name' => Phpfox::getUserBy('full_name'), 'row_full_name' => $aRow['full_name'], 'link' => $sLink, 'title' => $aRow['title'])))
+				'mass_subject' => (Phpfox::getUserId() == $aRow['user_id'] ? _p('webinar.full_name_commented_on_gender_webinar', array('full_name' => Phpfox::getUserBy('full_name'), 'gender' => Phpfox::getService('user')->gender($aRow['gender'], 1))) : _p('webinar.full_name_commented_on_row_full_name_s_webinar', array('full_name' => Phpfox::getUserBy('full_name'), 'row_full_name' => $aRow['full_name']))),
+				'mass_message' => (Phpfox::getUserId() == $aRow['user_id'] ? _p('webinar.full_name_commented_on_gender_webinar_a_href_link_title_a', array('full_name' => Phpfox::getUserBy('full_name'), 'gender' => Phpfox::getService('user')->gender($aRow['gender'], 1), 'link' => $sLink, 'title' => $aRow['title'])) : _p('webinar.full_name_commented_on_row_full_name_s_webinar_a_href_link_title_a_message', array('full_name' => Phpfox::getUserBy('full_name'), 'row_full_name' => $aRow['full_name'], 'link' => $sLink, 'title' => $aRow['title'])))
 			)
 		);
 	}
@@ -136,7 +136,7 @@ class Webinar_Service_Callback extends Phpfox_Service
 		$aRow['comment_view_id'] = '0';
 		if (!Phpfox::getService('comment')->canPostComment($aRow['comment_user_id'], empty($aRow['privacy_comment'])?3:1))
 		{
-			Phpfox_Error::set(Phpfox::getPhrase('webinar.unable_to_post_a_comment_on_this_item_due_to_privacy_settings'));
+			Phpfox_Error::set(_p('webinar.unable_to_post_a_comment_on_this_item_due_to_privacy_settings'));
 
 			unset($aRow['comment_item_id']);
 		}
@@ -158,15 +158,15 @@ class Webinar_Service_Callback extends Phpfox_Service
 		$sPhrase = '';
 		if ($aNotification['user_id'] == $aRow['user_id'] && !isset($aNotification['extra_users']))
 		{
-			$sPhrase = Phpfox::getPhrase('webinar.users_commented_on_gender_webinar_title', array('users' => $sUsers, 'gender' => Phpfox::getService('user')->gender($aRow['gender'], 1), 'title' => $sTitle));
+			$sPhrase = _p('webinar.users_commented_on_gender_webinar_title', array('users' => $sUsers, 'gender' => Phpfox::getService('user')->gender($aRow['gender'], 1), 'title' => $sTitle));
 		}
 		elseif ($aRow['user_id'] == Phpfox::getUserId())
 		{
-			$sPhrase = Phpfox::getPhrase('webinar.users_commented_on_your_webinar_title', array('users' => $sUsers, 'title' => $sTitle));
+			$sPhrase = _p('webinar.users_commented_on_your_webinar_title', array('users' => $sUsers, 'title' => $sTitle));
 		}
 		else
 		{
-			$sPhrase = Phpfox::getPhrase('webinar.users_commented_on_span_class_drop_data_user_row_full_name_s_span_webinar_title', array('users' => $sUsers, 'row_full_name' => $aRow['full_name'], 'title' =>  $sTitle));
+			$sPhrase = _p('webinar.users_commented_on_span_class_drop_data_user_row_full_name_s_span_webinar_title', array('users' => $sUsers, 'row_full_name' => $aRow['full_name'], 'title' =>  $sTitle));
 		}
 
 		return array(
@@ -190,10 +190,10 @@ class Webinar_Service_Callback extends Phpfox_Service
         $aWebinar['start_minute'] = date('i', $aWebinar['start_time']);
 
         $aUser = Phpfox::getService('user')->getUser($aWebinar['user_id']);
-		$sMessage = Phpfox::getPhrase('webinar.full_name_invites_you_to_a_webinar_named_title_on_time', array(
+		$sMessage = _p('webinar.full_name_invites_you_to_a_webinar_named_title_on_time', array(
 				'full_name'=>$aUser['full_name'],
 				'title'=>$aWebinar['title'],
-				'time'=>$aWebinar['start_month'].'.'.$aWebinar['start_day'].'.'.$aWebinar['start_year'].' '.Phpfox::getPhrase('webinar.time_separator').' '.$aWebinar['start_hour'].':'.$aWebinar['start_minute'],
+				'time'=>$aWebinar['start_month'].'.'.$aWebinar['start_day'].'.'.$aWebinar['start_year'].' '._p('webinar.time_separator').' '.$aWebinar['start_hour'].':'.$aWebinar['start_minute'],
 			)
 		);
 

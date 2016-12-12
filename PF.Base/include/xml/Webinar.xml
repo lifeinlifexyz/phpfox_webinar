@@ -5,12 +5,12 @@
 		<is_core>0</is_core>
 		<title>CM Webinar App</title>
 		<description>by CodeMake.Org Company</description>
-		<version>4.4.2p1.0.0</version>
+		<version>1.0.1</version>
 		<latest_version></latest_version>
 		<last_check>0</last_check>
 		<is_active>1</is_active>
-		<url>http://phpfox.ecodemaster.com</url>
-		<url_version_check>http://phpfox.ecodemaster.com</url_version_check>
+		<url>CodeMake.Org</url>
+		<url_version_check>CodeMake.Org</url_version_check>
 		<icon>http://cdn.codemake.org/phpfox/webinar/webinar_logo.png</icon>
 		<vendor></vendor>
 	</data>

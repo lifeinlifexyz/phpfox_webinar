@@ -31,7 +31,7 @@ class Webinar_Component_Ajax_Ajax extends Phpfox_Ajax
         }
 
         if(!Phpfox::getService('webinar.process')->inviteMembersVia((int)$iWebinarId, $aUsers, true)){
-            Phpfox::getLib('ajax')->alert(Phpfox::getPhrase('webinar.selected_users_have_been_invited'));
+            Phpfox::getLib('ajax')->alert(_p('webinar.selected_users_have_been_invited'));
         }
     }
     public function removeLogoWebinar()
@@ -41,7 +41,7 @@ class Webinar_Component_Ajax_Ajax extends Phpfox_Ajax
 			return false;
 		}
 		if (!Phpfox::getService('webinar.process')->removeWebinarLogo($iId)){
-			$this->alert(Phpfox::getPhrase('webinar.failed_to_delete_the_image'));
+			$this->alert(_p('webinar.failed_to_delete_the_image'));
 		}
     }
 
@@ -65,11 +65,11 @@ class Webinar_Component_Ajax_Ajax extends Phpfox_Ajax
     public function subscriberBan(){
         $aUser = Phpfox::getService('user')->get($this->get('user_id'));
         if (Phpfox::getService('webinar.process')->subscriberBan($this->get('webinar_id'), $this->get('user_id'))){
-            Phpfox::getLib('ajax')->alert(Phpfox::getPhrase('webinar.subscriber_full_name_banned', array('full_name'=>$aUser['full_name'])));
-			//$this->call("$('#alert_message #public_message').text('" . Phpfox::getPhrase('webinar.subscriber_full_name_banned', array('full_name'=>$aUser['full_name'])) . "').fadeIn(1000).fadeOut(6000);");
+            Phpfox::getLib('ajax')->alert(_p('webinar.subscriber_full_name_banned', array('full_name'=>$aUser['full_name'])));
+			//$this->call("$('#alert_message #public_message').text('" . _p('webinar.subscriber_full_name_banned', array('full_name'=>$aUser['full_name'])) . "').fadeIn(1000).fadeOut(6000);");
         }else{
-            Phpfox::getLib('ajax')->alert(Phpfox::getPhrase('webinar.ban_subscriber_full_name_failed', array('full_name'=>$aUser['full_name'])));
-			//$this->call("$('#alert_message #public_message').text('" . Phpfox::getPhrase('webinar.ban_subscriber_full_name_failed', array('full_name'=>$aUser['full_name'])) . "').fadeIn(1000).fadeOut(6000);");
+            Phpfox::getLib('ajax')->alert(_p('webinar.ban_subscriber_full_name_failed', array('full_name'=>$aUser['full_name'])));
+			//$this->call("$('#alert_message #public_message').text('" . _p('webinar.ban_subscriber_full_name_failed', array('full_name'=>$aUser['full_name'])) . "').fadeIn(1000).fadeOut(6000);");
         }
     }
 
@@ -102,7 +102,7 @@ class Webinar_Component_Ajax_Ajax extends Phpfox_Ajax
                 ->focus('#js_comment_input');
 
             // Send them a message that they failed the flood control
-            $this->alert(Phpfox::getPhrase('webinar.please_wait_limit_seconds_before_adding_a_new_comment', array('limit' => Phpfox::getUserParam('webinar.flood_control_webinar_comments'))));
+            $this->alert(_p('webinar.please_wait_limit_seconds_before_adding_a_new_comment', array('limit' => Phpfox::getUserParam('webinar.flood_control_webinar_comments'))));
 
             return false;
         }
@@ -113,7 +113,7 @@ class Webinar_Component_Ajax_Ajax extends Phpfox_Ajax
                 ->hide('#js_comment_message')
                 ->val('#js_comment_input', '')
                 ->focus('#js_comment_input')
-                ->alert(Phpfox::getPhrase('webinar.enter_a_comment'));
+                ->alert(_p('webinar.enter_a_comment'));
 
             return false;
         }

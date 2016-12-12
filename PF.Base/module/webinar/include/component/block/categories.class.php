@@ -56,7 +56,7 @@ class Webinar_Component_Block_Categories extends Phpfox_Component
         }
 
         $this->template()->assign(array(
-                'sHeader' => ($sCategory === null ? Phpfox::getPhrase('webinar.categories') : Phpfox::getPhrase('webinar.sub_categories')),
+                'sHeader' => ($sCategory === null ? _p('webinar.categories') : _p('webinar.sub_categories')),
                 'aCategories' => $aCategories,
                 'sCategory' => $sCategory
             )

@@ -254,23 +254,23 @@ class Webinar_Service_Process extends Phpfox_Service
                 if (trim(Phpfox::getParam('webinar.via_send')) == 'Message' || strpos(Phpfox::getParam('webinar.via_send'), 'Message')) {
                     if (!empty($aSendToUsers)) {
 
-                        $sMessage = Phpfox::getPhrase('webinar.full_name_invites_you_to_a_webinar_named_title', array(
+                        $sMessage = _p('webinar.full_name_invites_you_to_a_webinar_named_title', array(
                                 'full_name' => Phpfox::getUserBy('full_name'),
                                 'title' => $aWebinar['title'],
                                 'message' => Phpfox::getLib('parse.input')->prepare($aWebinar['description']),
-                                'time' => $aWebinar['start_month'] . '.' . $aWebinar['start_day'] . '.' . $aWebinar['start_year'] . ' ' . Phpfox::getPhrase('webinar.time_separator') . ' ' . $aWebinar['start_hour'] . ':' . $aWebinar['start_minute'],
+                                'time' => $aWebinar['start_month'] . '.' . $aWebinar['start_day'] . '.' . $aWebinar['start_year'] . ' ' . _p('webinar.time_separator') . ' ' . $aWebinar['start_hour'] . ':' . $aWebinar['start_minute'],
                                 'link' => Phpfox::getLib('url')->permalink('webinar.view', $aWebinar['webinar_id'], $aWebinar['title'])
                             )
                         );
                         $aMessage = array(
                             'to' => $aSendToUsers,
-                            'subject' => Phpfox::getPhrase('webinar.module_webinar') . ': ' . $aWebinar['title'],
+                            'subject' => _p('webinar.module_webinar') . ': ' . $aWebinar['title'],
                             'message' => $sMessage
                         );
                         $bMailSend = Phpfox::getService('mail.process')->add($aMessage);
                         if ($isAjax && $bMailSend) {
-                            Phpfox::getLib('ajax')->alert(Phpfox::getPhrase('webinar.the_invitation_has_been_sent_successfully'));
-                            //Phpfox::getLib('ajax')->call("$('#alert_message #public_message').text('".Phpfox::getPhrase('webinar.the_invitation_has_been_sent_successfully')."').fadeIn(100);");
+                            Phpfox::getLib('ajax')->alert(_p('webinar.the_invitation_has_been_sent_successfully'));
+                            //Phpfox::getLib('ajax')->call("$('#alert_message #public_message').text('"._p('webinar.the_invitation_has_been_sent_successfully')."').fadeIn(100);");
                             //Phpfox::getLib('ajax')->call("$('#alert_message #public_message').fadeOut(5000);");
                         }
                         return $bMailSend;
@@ -285,8 +285,8 @@ class Webinar_Service_Process extends Phpfox_Service
                             $bNotificationSend = Phpfox::getService('notification.process')->add('webinar', $aWebinar['webinar_id'], $iUser, Phpfox::getUserId());
                         }
                         if ($isAjax && $bNotificationSend) {
-                            Phpfox::getLib('ajax')->alert(Phpfox::getPhrase('webinar.the_invitation_has_been_sent_successfully'));
-                            //Phpfox::getLib('ajax')->call("$('#alert_message #public_message').text('".Phpfox::getPhrase('webinar.the_invitation_has_been_sent_successfully')."').fadeIn(100);");
+                            Phpfox::getLib('ajax')->alert(_p('webinar.the_invitation_has_been_sent_successfully'));
+                            //Phpfox::getLib('ajax')->call("$('#alert_message #public_message').text('"._p('webinar.the_invitation_has_been_sent_successfully')."').fadeIn(100);");
                             //Phpfox::getLib('ajax')->call("$('#alert_message #public_message').fadeOut(5000);");
                         }
                         return true;

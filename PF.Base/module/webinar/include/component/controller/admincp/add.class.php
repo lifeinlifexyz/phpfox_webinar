@@ -35,20 +35,20 @@ class Webinar_Component_Controller_Admincp_Add extends Phpfox_Component
 			{
 				if (Phpfox::getService('webinar.category.process')->update($aCategory['category_id'], $aVals))
 				{
-					$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], Phpfox::getPhrase('webinar.category_successfully_updated'));
+					$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], _p('webinar.category_successfully_updated'));
 				}
 			}
 			else 
 			{
 				if (Phpfox::getService('webinar.category.process')->add($aVals))
 				{
-					$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], Phpfox::getPhrase('webinar.category_successfully_added'));
+					$this->url()->send('admincp.app', ['id' => 'CM_Webinar'], _p('webinar.category_successfully_added'));
 				}
 			}
 		}
 		
-		$this->template()->setTitle(($bIsEdit ? Phpfox::getPhrase('webinar.edit_a_category') : Phpfox::getPhrase('webinar.create_a_new_category')))
-			->setBreadcrumb(($bIsEdit ? Phpfox::getPhrase('webinar.edit_a_category') : Phpfox::getPhrase('webinar.create_a_new_category')), $this->url()->makeUrl('admincp.app', ['id'=>'CM_Webinar']))
+		$this->template()->setTitle(($bIsEdit ? _p('webinar.edit_a_category') : _p('webinar.create_a_new_category')))
+			->setBreadcrumb(($bIsEdit ? _p('webinar.edit_a_category') : _p('webinar.create_a_new_category')), $this->url()->makeUrl('admincp.app', ['id'=>'CM_Webinar']))
 			->assign(array(
 					'sOptions' => Phpfox::getService('webinar.category')->display('option')->get(),
 					'bIsEdit' => $bIsEdit

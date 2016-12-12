@@ -20,9 +20,9 @@ class Webinar_Component_Controller_Index extends Phpfox_Component
         $aWebinarDisplays = array(10, 20, 30);
 
         $aSort = array(
-            'latest' => array('w.time_stamp', Phpfox::getPhrase('webinar.latest')),
-            //'most-viewed' => array('w.total_view', Phpfox::getPhrase('webinar.most_viewed')),
-            'most-talked' => array('w.total_comment', Phpfox::getPhrase('webinar.most_discussed'))			
+            'latest' => array('w.time_stamp', _p('webinar.latest')),
+            //'most-viewed' => array('w.total_view', _p('webinar.most_viewed')),
+            'most-talked' => array('w.total_comment', _p('webinar.most_discussed'))			
         );
 
         $this->search()->set(array(
@@ -32,7 +32,7 @@ class Webinar_Component_Controller_Index extends Phpfox_Component
                     'table_alias' => 'w',
                     'search' => array(
                         'action' => Phpfox::getLib('url')->makeUrl('webinar.index'),
-                        'default_value' => Phpfox::getPhrase('webinar.search_webinars'),
+                        'default_value' => _p('webinar.search_webinars'),
                         'name' => 'search',
                         'field' => 'w.title'
                     ),
@@ -86,8 +86,8 @@ class Webinar_Component_Controller_Index extends Phpfox_Component
             'count' => $this->search()->browse()->getCount()
         );
         Phpfox::getLib('pager')->set($aPager);
-        $this->template()->setTitle(Phpfox::getPhrase('webinar.all_webinars'))
-            ->setBreadCrumb(Phpfox::getPhrase('webinar.all_webinars'), Phpfox::getLib('url')->makeUrl('webinar'))
+        $this->template()->setTitle(_p('webinar.all_webinars'))
+            ->setBreadCrumb(_p('webinar.all_webinars'), Phpfox::getLib('url')->makeUrl('webinar'))
             ->setHeader("cache", array(
                 'webinar.css'=>'module_webinar',
                 'pager.css' => 'style_css'

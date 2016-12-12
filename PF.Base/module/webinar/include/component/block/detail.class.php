@@ -29,7 +29,7 @@ class Webinar_Component_Block_Detail extends Phpfox_Component
         }
         $aWebinarDetail['category_url'] = $this->url()->permalink(array('webinar.category', 'view' => $this->request()->get('view')), isset($aWebinarDetail['category_id'])?$aWebinarDetail['category_id']:0, isset($aWebinarDetail['category_name'])?$aWebinarDetail['category_name']:'');
 		$this->template()->assign(array(
-				'sHeader' => Phpfox::getPhrase('webinar.webinar_details'),
+				'sHeader' => _p('webinar.webinar_details'),
 				'aWebinarDetail' => $aWebinarDetail,
 				'iWebinarView' => $this->request()->getInt('req3')
 			)

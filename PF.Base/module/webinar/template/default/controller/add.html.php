@@ -61,6 +61,7 @@ defined('PHPFOX') or exit('NO DICE!');
             </div>
         </div>
     </div>
+    {*
     <div class="table">
         <div class="table_left">
             <label for="start_a_hangout">{phrase var='webinar.create_a_hangout_and_paste_the_link_to_source_field'}:</label>
@@ -81,6 +82,7 @@ defined('PHPFOX') or exit('NO DICE!');
             {/literal}
         </div>
     </div>
+    *}
     <div class="table">
         <div class="table_left">
             <label for="start_time">{phrase var='webinar.start_time'}:</label>

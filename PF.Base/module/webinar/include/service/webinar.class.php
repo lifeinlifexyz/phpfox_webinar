@@ -86,13 +86,13 @@ class Webinar_Service_Webinar extends Phpfox_Service{
 
         if (!isset($aWebinar['webinar_id'])){
 
-            return Phpfox_Error::display(Phpfox::getPhrase('webinar.sorry_the_webinar_you_are_looking_for_no_longer_exists', array('link' => Phpfox::getLib('url')->makeUrl('webinar'))));
+            return Phpfox_Error::display(_p('webinar.sorry_the_webinar_you_are_looking_for_no_longer_exists', array('link' => Phpfox::getLib('url')->makeUrl('webinar'))));
         }elseif(Phpfox::getService('webinar.process')->isSubscriberBan($aWebinar['webinar_id'], Phpfox::getUserId())){
 
-            return Phpfox_Error::display(Phpfox::getPhrase('webinar.you_were_banned_by_the_moderator', array('link' => Phpfox::getLib('url')->makeUrl('webinar'))));
+            return Phpfox_Error::display(_p('webinar.you_were_banned_by_the_moderator', array('link' => Phpfox::getLib('url')->makeUrl('webinar'))));
         }elseif(!empty($aWebinar['is_closed']) && $aWebinar['user_id'] != Phpfox::getUserId() && !$this->isSubscriberJoined($aWebinar['webinar_id'])){
 
-            return Phpfox_Error::display(Phpfox::getPhrase('webinar.this_webinar_is_closed_you_can_not_participate_in_it', array('link' => Phpfox::getLib('url')->makeUrl('webinar'))));
+            return Phpfox_Error::display(_p('webinar.this_webinar_is_closed_you_can_not_participate_in_it', array('link' => Phpfox::getLib('url')->makeUrl('webinar'))));
         }elseif(empty($aWebinar['is_closed']) && $aWebinar['user_id'] != Phpfox::getUserId() && !$this->isSubscriberJoined($aWebinar['webinar_id'])){
 
             $this->addNewSubscriber($iId);
@@ -167,10 +167,10 @@ class Webinar_Service_Webinar extends Phpfox_Service{
         if (!defined('PHPFOX_IS_USER_PROFILE'))
         {
             $aFilterMenu = array(
-                Phpfox::getPhrase('webinar.all_webinars') => '',
-                Phpfox::getPhrase('webinar.my_webinars') => 'mywebinars',
-                Phpfox::getPhrase('webinar.me_invited') => 'meinvited',
-                Phpfox::getPhrase('webinar.opened_webinars') => 'opened',
+                _p('webinar.all_webinars') => '',
+                _p('webinar.my_webinars') => 'mywebinars',
+                _p('webinar.me_invited') => 'meinvited',
+                _p('webinar.opened_webinars') => 'opened',
             );
 
             $aFilterMenu[] = true;

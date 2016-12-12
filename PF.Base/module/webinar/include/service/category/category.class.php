@@ -310,7 +310,7 @@ class Webinar_Service_Category_Category extends Phpfox_Service
 			{
 				$this->_sOutput .= '<div class="js_mp_parent_holder" id="js_mp_holder_' . $iParentId . '" ' . ($iParentId > 0 ? ' style="display:none; padding:5px 0px 0px 0px;"' : '') . '>';
 				$this->_sOutput .= '<select name="val[category][' . $iParentId . ']" class="js_mp_category_list" id="js_mp_id_' . $iParentId . '">' . "\n";
-				$this->_sOutput .= '<option value="">' . ($iParentId === 0 ? Phpfox::getPhrase('webinar.select') : Phpfox::getPhrase('webinar.select_a_sub_category')) . ':</option>' . "\n";
+				$this->_sOutput .= '<option value="">' . ($iParentId === 0 ? _p('webinar.select') : _p('webinar.select_a_sub_category')) . ':</option>' . "\n";
 			}
 			
 			foreach ($aCategories as $iKey => $aCategory)

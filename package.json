@@ -1,11 +1,11 @@
 {
     "id": "CM_Webinar",
     "internal_id": 0,
-    "version": "1.0.0",
-    "current_version": "4.4.2p1.0.0",
+    "version": "1.0.1",
+    "current_version": null,
     "name": "CM Webinar App",
-    "module": true,
+    "module": false,
     "type": "app",
-    "icon": "<div class=\"app_icons image_load\" data-src=\"\/\/cdn.codemake.org\/phpfox\/webinar\/webinar_logo.png\"><\/div>",
+    "icon": "<div class=\"app_icons image_load\" data-src=\"http:\/\/localhost\/fox4.5\/PF.Site\/Apps\/CM_Webinar\/icon.png\"><\/div>",
     "is_core": false
 }

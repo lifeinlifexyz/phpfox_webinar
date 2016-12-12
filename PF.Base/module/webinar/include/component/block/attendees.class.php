@@ -19,7 +19,7 @@ class Webinar_Component_Block_Attendees extends Phpfox_Component
 	public function process()
 	{
 		$this->template()->assign(array(
-				'sHeader' => Phpfox::getPhrase('webinar.attendees')
+				'sHeader' => _p('webinar.attendees')
 			)
 		);
 

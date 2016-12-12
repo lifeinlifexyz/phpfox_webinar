@@ -32,7 +32,7 @@ class Webinar_Component_Block_Comment_Display extends Phpfox_Component
 		
 		// Assign the vars to the template
 		$this->template()->assign(array(
-				'sHeader' => Phpfox::getPhrase('webinar.comments'),
+				'sHeader' => _p('webinar.comments'),
 				'aComments' => $aMessages,
 				'iCommentRefresh' => Phpfox::getParam('webinar.comment_ajax_time_refresh')*1000,
 				'iCommentWordWrap' => Phpfox::getParam('webinar.comment_wordwrap'),

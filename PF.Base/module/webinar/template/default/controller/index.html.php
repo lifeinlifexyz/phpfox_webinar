@@ -41,7 +41,7 @@ $aWebinars = $this->getVar('aWebinars');
                     endif;
                 ?>">
                 <div class="extra_info">
-                    <?php echo(Phpfox::getPhrase('webinar.by_full_name_on_time',
+                    <?php echo(_p('webinar.by_full_name_on_time',
                         array(
                             'full_name'=>sprintf('<span class="user_profile_link_span" id="js_user_name_link_%s"><a href="%s">'.Phpfox::getService('webinar.utils')->text($aWebinar['full_name'], 30).'</a></span>', $aWebinar['user_name'], Phpfox::getLib('url')->permalink('webinar', $aWebinar['user_name'])),
                             'time'=>Phpfox::getService('webinar.utils')->convertTime($aWebinar['time_stamp'])
@@ -50,13 +50,13 @@ $aWebinars = $this->getVar('aWebinars');
                     ?>
                 </div>
                 <div class="extra_info">
-                    <?php echo(Phpfox::getPhrase('webinar.begin_in_time', array('time'=>Phpfox::getTime('H:i M d, Y', $aWebinar['start_time']))));?>
+                    <?php echo(_p('webinar.begin_in_time', array('time'=>Phpfox::getTime('H:i M d, Y', $aWebinar['start_time']))));?>
                 </div>
                 <div class="extra_info">
-                    <?php echo(Phpfox::getPhrase('webinar.webinar_is_closed', array('YesOrNo'=>!empty($aWebinar['is_closed'])?Phpfox::getPhrase('webinar.yes'):Phpfox::getPhrase('webinar.no'))));?>
+                    <?php echo(_p('webinar.webinar_is_closed', array('YesOrNo'=>!empty($aWebinar['is_closed'])?_p('webinar.yes'):_p('webinar.no'))));?>
                 </div>
                 <div class="extra_info">
-                    <?php echo(Phpfox::getPhrase('webinar.total_subscribers_count',
+                    <?php echo(_p('webinar.total_subscribers_count',
                         array(
                             'count'=>Phpfox::getService('webinar.webinar')->getSubscribersCount($aWebinar['webinar_id'])
                         )
@@ -64,7 +64,7 @@ $aWebinars = $this->getVar('aWebinars');
                     ?>
                 </div>
                 <div class="extra_info">
-                    <?php echo(Phpfox::getPhrase('webinar.total_comments_count',
+                    <?php echo(_p('webinar.total_comments_count',
                         array(
                             'count'=>$aWebinar['total_comment']
                         )
@@ -72,7 +72,7 @@ $aWebinars = $this->getVar('aWebinars');
                     ?>
                 </div>
                 <div class="extra_info">
-                    <?php echo(Phpfox::getPhrase('webinar.total_likes_count',
+                    <?php echo(_p('webinar.total_likes_count',
                         array(
                             'count'=>$aWebinar['total_like']
                         )
