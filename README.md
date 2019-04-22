@@ -1,3 +1,7 @@
+<h2>Paid Support:</h2>       
+<p>The phpfox apps and themes by codemake are provided under the MIT license with no commercial support or liability. 
+<a href="mailto:phpfox@lifeinlife.xyz">phpfox@lifeinlife.xyz</a> also provides commercial support and professional customisation services.</p>
+
 <h2>PHPFox Webinar:</h2>
 
 If you cherish to provide online seminars for giving knowledge to your audience, so this unique plugin undoubtedly for you! You can provide subscribers with webinars for free without paying other webinar services. This awesome plugin was made on the base of Hangout On Air, YouTube and Vimeo. You can invite subscribers to the webinar, also ban subscribers to write obscene words.
